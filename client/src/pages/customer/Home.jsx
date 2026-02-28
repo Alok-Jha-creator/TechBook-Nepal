@@ -36,7 +36,7 @@ function Home() {
   useEffect(() => {
     api.get('/services')
       .then(res => { if (res.data.length > 0) setServices(res.data) })
-      .catch(() => {})
+      .catch(() => { })
   }, [])
 
   return (
@@ -290,7 +290,7 @@ function Home() {
             className="text-3xl md:text-4xl font-black text-white mb-4 relative"
             style={{ fontFamily: 'Syne, sans-serif' }}
           >
-            Technician Chau?
+            Are You a Technician ?
           </h2>
           <p className="text-slate-400 mb-8 relative">
             TechBook Nepal ma join gara — verified ban ra customers paunus
@@ -310,18 +310,117 @@ function Home() {
       </div>
 
       {/* Footer */}
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }} className="py-8">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <span
-            className="text-white font-black"
-            style={{ fontFamily: 'Syne, sans-serif' }}
-          >
-            Tech<span className="text-orange-500">Book</span>
-            <span className="text-slate-600 font-normal text-sm ml-1">Nepal</span>
-          </span>
-          <p className="text-slate-600 text-sm">© 2025 TechBook Nepal — All rights reserved</p>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.04)', background: 'rgba(15,23,42,0.4)' }}>
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
+
+            {/* Brand */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+                <div style={{ width: 36, height: 36, background: '#f97316', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: 'Syne, sans-serif', fontWeight: 900, fontSize: 13, boxShadow: '0 0 20px rgba(249,115,22,0.3)' }}>
+                  TB
+                </div>
+                <span style={{ color: '#fff', fontFamily: 'Syne, sans-serif', fontWeight: 900, fontSize: 18 }}>
+                  Tech<span style={{ color: '#f97316' }}>Book</span>
+                  <span style={{ color: '#334155', fontWeight: 400, fontSize: 13, marginLeft: 4 }}>Nepal</span>
+                </span>
+              </div>
+              <p style={{ color: '#475569', fontSize: 13, lineHeight: 1.7, maxWidth: 280 }}>
+                Nepal ko sabai vanda trusted technician booking platform. Verified professionals, doorstep service.
+              </p>
+              {/* Social links */}
+              <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
+                {['Facebook', 'Instagram', 'Twitter'].map(social => (
+                  <div
+                    key={social}
+                    style={{
+                      padding: '6px 14px', borderRadius: 8,
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(255,255,255,0.06)',
+                      color: '#475569', fontSize: 12,
+                      fontFamily: 'Syne, sans-serif', fontWeight: 600,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    {social}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Services */}
+            <div>
+              <p style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: 12, color: '#f97316', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 16 }}>
+                Services
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {['AC Repair', 'Plumber', 'Electrician', 'Bike Repair', 'Carpenter', 'CCTV'].map(s => (
+                  <span key={s} style={{ color: '#475569', fontSize: 13, cursor: 'pointer' }}
+                    onMouseEnter={e => e.target.style.color = '#94a3b8'}
+                    onMouseLeave={e => e.target.style.color = '#475569'}
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Company */}
+            <div>
+              <p style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: 12, color: '#f97316', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 16 }}>
+                Company
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {['About Us', 'How it Works', 'Careers', 'Blog', 'Press'].map(s => (
+                  <span key={s} style={{ color: '#475569', fontSize: 13, cursor: 'pointer' }}
+                    onMouseEnter={e => e.target.style.color = '#94a3b8'}
+                    onMouseLeave={e => e.target.style.color = '#475569'}
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <p style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: 12, color: '#f97316', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 16 }}>
+                Contact
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {[
+                  { icon: '📧', text: 'hello@techbook.com.np' },
+                  { icon: '📞', text: '+977 9800000000' },
+                  { icon: '📍', text: 'Kathmandu, Nepal' },
+                ].map(item => (
+                  <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <span style={{ fontSize: 14 }}>{item.icon}</span>
+                    <span style={{ color: '#475569', fontSize: 13 }}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <p style={{ color: '#475569', fontSize: 12 }}>
+              © 2025 TechBook Nepal. All rights reserved.
+            </p>
+            <div style={{ display: 'flex', gap: 20 }}>
+              {['Privacy Policy', 'Terms of Service'].map(item => (
+                <span key={item} style={{ color: '#475569', fontSize: 12, cursor: 'pointer' }}
+                  onMouseEnter={e => e.target.style.color = '#94a3b8'}
+                  onMouseLeave={e => e.target.style.color = '#475569'}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   )
 }
