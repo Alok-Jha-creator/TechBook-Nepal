@@ -55,15 +55,15 @@ function TechnicianList() {
         {loading ? (
           <div className="flex flex-col items-center justify-center py-32 gap-4">
             <div className="w-10 h-10 border-2 border-orange-500 border-t-transparent rounded-full animate-spin" />
-            <p className="text-slate-500 text-sm">Technicians khojirako cha...</p>
+            <p className="text-slate-500 text-sm">Please wait...</p>
           </div>
         ) : technicians.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-32 gap-4">
             <span className="text-5xl">🔍</span>
             <p className="text-slate-400 font-semibold" style={{ fontFamily: 'Syne, sans-serif' }}>
-              Koi technician available chaina ahile
+              No technicians available at the moment
             </p>
-            <p className="text-slate-600 text-sm">Pछi feri check gara</p>
+            <p className="text-slate-600 text-sm">Please check back later</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
