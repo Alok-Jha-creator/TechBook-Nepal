@@ -1,10 +1,3 @@
-Sahi kura! Maf gara — aba TechBook Nepal ko concept bata nai bujhau.
-
----
-
-## TechBook Nepal Bata Nai Bujhau
-
----
 
 ## 📁 `pages/` — Website Ka Alag Alag Screens
 
@@ -103,41 +96,5 @@ Customer le login garcha, register garcha — yo file le backend ma request path
 Booking create garda, cancel garda, list lyauda — yo file le backend sanga kura garcha.
 
 **`technician.service.js`**
-Technician list lyauda, ek technician ko detail lyauda, admin le approve/reject garda — yo file le backend sanga kura garcha.
-
----
-
-## 🔄 Real Flow — Alok Le AC Repair Book Garyo
-
-```
-Alok techbooknepal.com kholcha
-          ↓
-App.jsx — "/" URL dekhyo, Home.jsx dekhau
-          ↓
-Home.jsx — AC Repair, Plumber, Electrician cards dekhcha
-(ServiceCard.jsx use hunchha har ek service ko lagi)
-(Navbar.jsx top ma dekhcha)
-          ↓
-Alok "AC Repair" click garcha
-          ↓
-TechnicianList.jsx — technician.service.js le
-backend bata AC Repair technicians lyaucha
-(TechnicianCard.jsx use hunchha har ek technician ko lagi)
-          ↓
-Alok le "Ram Technician" choose garcha
-          ↓
-BookingPage.jsx — Alok le date, time, address fill garcha
-AuthContext.jsx bata Alok ko info linchan
-booking.service.js le backend ma booking pathaucha
-          ↓
-MyBookings.jsx — Alok ko booking dekhcha
-(BookingCard.jsx use hunchha)
-          ↓
-Ram (Technician) ko Dashboard.jsx ma
-naya booking request dekhcha — Accept garcha
-          ↓
-Admin VerificationQueue.jsx ma
-sabai activities monitor garna sakcha
-```
-
----
+Technician list lyauda, ek technician ko detail lyauda, admin le approve/reject garda — yo file le backend sanga kura 
+gggach
